@@ -10,6 +10,7 @@ namespace App\Services\admin\global_settings;
 
 use Illuminate\Auth\AuthManager;
 use Illuminate\Database\DatabaseManager;
+use App\Models\Parish;
 
 class ParishService {
     private $auth;
@@ -18,5 +19,9 @@ class ParishService {
     public function __construct( AuthManager $auth, DatabaseManager $database) {
         $this->auth = $auth;
         $this->database = $database;
+    }
+
+    public function getParishList(){
+        return Parish::with('diocese')->get();
     }
 }

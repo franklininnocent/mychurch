@@ -32,6 +32,13 @@ Route::group([
     Route::get('/dashboard', 'admin\DashboardController@index');
     Route::get('/global-settings/parish/list', 'admin\ParishController@getParishList');
 
-    Route::get('/users', 'admin\UserController@list');
+    Route::get('/users/list', 'admin\UserController@list');
+    Route::get('/users/register', 'admin\UserController@register');
+    Route::post('/users/save', 'admin\UserController@saveUser');
+    Route::any('/users/{id}', 'admin\UserController@update');
+
+
+
+    Route::get('/family/list', 'admin\FamilyController@list');
 
 });

@@ -66,7 +66,7 @@
                 </li>
 
 
-                <li class="nav-item has-treeview {!! Request::is('administrator/global-settings/*')  ? ' active menu-open' : '' !!}">
+                {{--<li class="nav-item has-treeview {!! Request::is('administrator/global-settings/*')  ? ' active menu-open' : '' !!}">
                     <a href="#" class="nav-link {!! Request::is('administrator/global-settings/*') ? ' active' : '' !!}">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>Global Settings<i class="fas fa-angle-left right"></i></p>
@@ -82,30 +82,45 @@
 
 
                     </ul>
+                </li>--}}
+
+
+
+                <li class="nav-item has-treeview {!! Request::is('administrator/global-settings/*')  ? ' active menu-open' : '' !!}">
+                    <a href="#" class="nav-link {!! Request::is('administrator/global-settings/*') ? ' active' : '' !!}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>Parash Manager<i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{ url('administrator/global-settings/parish/list') }}"
+                               class="nav-link {!! Request::is('administrator/global-settings/parish/*') ? 'active ' : '' !!}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Parish Manager</p></a>
+                        </li>
+
+
+                    </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+
+                <li class="nav-item has-treeview {!! Request::is('administrator/users/*')  ? ' active menu-open' : '' !!}">
+                    <a href="#" class="nav-link {!! Request::is('administrator/users/*') ? ' active' : '' !!}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>User Manager<i class="right fas fa-angle-left"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="{{ url('administrator/users/register') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a href="{{ url('administrator/users/list') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Sample</p>
+                                <p>List</p>ss
                             </a>
                         </li>
                     </ul>

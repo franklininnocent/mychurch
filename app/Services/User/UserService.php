@@ -28,7 +28,9 @@ class UserService {
     }
 
     public function getUsersList(){
-        return DB::table('users')->select('users.id','users.name', 'users.email', 'users.active', 'users.role_id','roles.name as role_name')
+        return DB::table('users')
+            ->select('users.id','users.name', 'users.email', 'users.active',
+                'users.role_id','roles.name as role_name')
             ->join('roles','roles.id','=','users.role_id')
             ->where('role_id','!=',1)
             ->get();
